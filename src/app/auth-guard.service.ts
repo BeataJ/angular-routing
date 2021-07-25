@@ -9,7 +9,7 @@ import { Injectable } from "@angular/core";
 import { AuthService } from "./auth.service";
 
 @Injectable()
-export class AuthGoard implements CanActivate {
+export class AuthGuard implements CanActivate {
     constructor(
         private authService: AuthService,
         private router: Router
@@ -25,7 +25,7 @@ export class AuthGoard implements CanActivate {
                     if(authenticated) {
                         return true;
                     } else {
-                        this.router.navigate(['/'])
+                        this.router.navigate(['/']);
                     }
                 }
             )
